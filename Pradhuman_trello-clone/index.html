@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trello Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="board">
+      <form id="todo-form">
+        <input type="text" id="todo-input" placeholder="New TODO..." />
+        <button type="submit">Add Card</button>
+      </form>
+
+      <div class="lanes">
+        <div class="swim-lane" id="todo-lane">
+          <h3 class="heading1">TODO</h3>
+        </div>
+        <div class="swim-lane" id="doing-lane">
+          <h3 class="heading2">DOING</h3>
+        </div>
+        <div class="swim-lane" id="done-lane">
+          <h3 class="heading3">DONE</h3>
+        </div>
+      </div>
+    </div>
+
+    <script src="drag.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
