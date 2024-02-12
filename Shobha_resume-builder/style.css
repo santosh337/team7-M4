@@ -1,0 +1,396 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     padding: 50px 10px;
+     justify-content: space-between;
+  }
+.parent{
+    width: 100px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+
+  
+  h1 {
+    text-align: center;
+    color: #007bff;
+  }
+  
+  form fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  form legend {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  form textarea {
+    height: 100px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  #downloadButton {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #downloadButton:hover {
+    background-color: #218838;
+  }
+
+.heading{
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: underline;
+}
+
+  .round-img{
+   border-radius: 50%;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left:80%;
+  }
+
+
+
+  /* minimalais css style --------------------------------------*/
+    
+  #minimalist {
+    width: 50%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease forwards;
+    padding: 30px 50px;
+    font-size: 20px;
+    height: 100%;
+  
+  
+  }
+  @keyframes fadeIn {
+    from {
+      /* opacity: 0; */
+      transform: translateY(-20px);
+    }
+    to {
+      /* opacity: 1; */
+      transform: translateY(0);
+    }
+  }
+  
+  .profile-mini{
+   color: rgb(4, 5, 5);
+   font-style: italic;
+   width: 100%;
+   padding: 20px 10px;
+   font-size: 25px;
+  }
+  .profile-mini > p{
+    font-size: 20px;
+  } 
+  
+  #other > h3{
+    text-decoration: underline;
+    font-weight: bolder;
+    color: black;
+  }
+  .minimalist-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+   #profile{
+    width:100%;
+    padding: 10px 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+   
+  }
+  #profile > h3{
+    color: black;
+  
+   
+  }
+  #profile > p{
+    font-size: 20px;
+    line-break: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+  #education{
+    min-height: 200px;
+    padding: 10px 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    flex-wrap: wrap;
+  
+  }
+  #education > h3{
+    color: black;
+
+  }
+  #sub-div{
+    padding: 15px 10px;
+    display: flex;
+    justify-content:space-between;
+    text-align: left;
+    gap: 10px;
+    flex-wrap: wrap
+  }
+
+#work{
+    width:100%;
+    padding: 15px 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+  #work > h3{
+    color: black;
+
+  }
+ #work2{
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-evenly;
+
+  }
+  #other{
+    width:100%;
+    padding: 10px 10px; 
+  }
+  #other > p{
+    color: black;
+  }
+
+
+  .skills1{
+    width:100%;
+    padding: 10px 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+  
+
+  }
+  .skills1> h3{
+    color: black;
+  }
+   
+  .hobbies{
+    width:100%;
+    padding: 10px 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-wrap: wrap;
+    min-width: 200px;
+
+  }
+  .hobbies > ul{
+     display: flex;
+     justify-content: space-evenly;
+     width:40%;
+     min-width: 200px;
+     min-width: 200px;
+  }
+ 
+ .hobbies > h3{
+     text-decoration: underline;
+     font-family: cursive;
+  }
+/* end of styling of minimalist ------------------------*/
+/*STYLING OF NEXT RESUME TWO COLUMN------------------------ */
+
+
+
+#two-column{
+    width: 850px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px 5px;
+    margin: auto;
+    gap: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease forwards;
+    border: 1px solid black;
+    background-color: #fff;
+   
+  }
+  @keyframes fadeIn {
+    from {
+      /* opacity: 0; */
+      transform: translateY(-20px);
+    }
+    to {
+      /* opacity: 1; */
+      transform: translateY(0);
+    }
+  }
+
+  .left{
+    width:450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: antiquewhite;
+    padding: 15px 15px;
+}
+.language{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: underline;
+}
+
+ .language > ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+ }
+.image{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   
+  }
+
+  .image > img{
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     margin-left: 35%;
+
+  }
+
+  .right{
+    width:500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+
+} 
+.exp-1{
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  gap:2px;
+} 
+.sub-div1{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: underline;
+}
+.skills{
+  text-decoration: underline;
+}
+
+
+
+
+
+  
+  
+  
+  
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  
+  

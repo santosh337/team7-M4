@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add the jsPDF library -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+ 
+
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+  <title>Online Resume Builder</title>
+</head>
+<body>
+  <!-- <div class="parent"> -->
+  <div class="container">
+    <h1 id="headerText">Online Resume Builder</h1>
+    <div id="customization">
+      <label for="headerColor">Header Color:</label>
+      <input type="Color" id="headerColor">
+      <label for="textColor">Text Color:</label>
+      <input type="color" id="textColor">
+      <select id="myselect">
+        <option value="minimalist">minimalist</option>
+        <option value="two-column">two-column</option>
+      </select>
+    </div>
+    <form id="resumeForm">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="name" />
+        <label for="address">Address:</label>
+        <input type="text" id="address" />
+        <label for="email">Email:</label>
+        <input type="email" id="email" />
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" />
+        <label for="picture">Upload Picture:</label>
+        <input type="file" id="picture" accept="image/*" />
+      </fieldset>
+      <fieldset>
+        <legend>Profile</legend>
+        <label for="profile">Profile:</label>
+        <textarea id="profile"></textarea>
+      </fieldset>
+<!-- education details -->
+    
+      <legend>Education</legend>
+      <label for="eduDegree">12th:</label>
+      <input type="text" id="12"></input>
+      <label for="eduInstitution">School:</label>
+      <input type="text" id="12institution"></input>
+      <label for="eduYear">Year:</label>
+      <input type="text" id="12yr"></input>
+      <label for="eduDegree">Bechlor-Degree:</label>
+      <input type="text" id="bachelor"></input>
+      <label for="eduInstitution">Bechlor-Institution:</label>
+      <input type="text" id="bInst"></input>
+      <label for="eduYear">Year:</label>
+      <input type="text" id="bYear"></input>
+
+      <label for="eduDegree">Master-Degree:</label>
+      <input type="text" id="master"></input>
+      <label for="eduInstitution">Master-Institution:</label>
+      <input type="text" id="masterInst"></input>
+      <label for="eduYear">Year:</label>
+      <input type="text" id="masterYear"></input>
+
+
+      <legend>Other Information</legend>
+      <label for="other"></label>
+      <textarea id="other"></textarea>
+      </fieldset>
+
+      <!-- work details -->
+
+      <fieldset>
+        <legend>Work Experience</legend>
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jt1" />
+        <label for="employer">Employer:</label>
+        <input type="text" id="employer1" />
+        <label for="workYear">Year:</label>
+        <input type="text" id="year1" />
+
+
+        <label for="jobTitle">Job Title-second:</label>
+        <input type="text" id="jt2" />
+        <label for="employer">Employer-second:</label>
+        <input type="text" id="employer2" />
+        <label for="workYear">Year-second:</label>
+        <input type="text" id="year2" />
+
+
+        <legend>Other Information</legend>
+        <label for="other"></label>
+        <textarea id="work-other"></textarea>
+
+
+      </fieldset>
+
+
+      <fieldset>
+        <legend>Skills</legend>
+        <label for="skills">Skills:</label>
+        <input type="text" id="skills1" placeholder="skills-1" />
+        <input type="text" id="skills2" placeholder="skills-2" />
+        <input type="text" id="skills3" placeholder="skills-3" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Language</legend>
+        <label for="languages" id="languages">languages</label>
+        <input type="text" id="lang1" placeholder="language-1">
+        <input type="text" id="lang2" placeholder="language-2">
+        <input type="text" id="lang3" placeholder="language-3">
+      </fieldset>
+
+
+      <fieldset>
+        <legend>Hobbies</legend>
+        <label for="hobbies" id="hobbies">Hobbies</label>
+        <input type="text" id="hobbies1" placeholder="hobbies-1">
+        <input type="text" id="hobbies2" placeholder="hobbies-2">
+        <input type="text" id="hobbies3" placeholder="hobbies-3">
+      </fieldset>
+
+
+      <button type="submit">Generate Resume</button>
+      <button id="downloadButton" style="display: none;">Download Resume</button>
+    </form>
+  </div>
+ 
+ 
+ 
+ 
+  <!-- resume 1 -->
+  <div id="minimalist">
+    <div id="minimalist-heading2" class="heading">
+      <h2 id="minimalist-name"></h2>
+      <img id="minimalist-img" class="round-img" alt="User's Picture"></img>
+    </div>
+
+    <div>
+      <p><strong>Address:</strong><span id="minimalist-address"></span></p>
+      <p><strong>Email:</strong><span id="minimalist-email"></span></p>
+      <p><strong>Phone:</strong><span id="minimalist-phone"></span></span></p>
+    </div>
+
+    <div class="profile-mini">
+      <h3>Profile</h3>
+      <p id="minimalist-profile"></p>
+    </div>
+
+    <div id="education">
+      <h3>Education</h3>
+      <div id="sub-div">
+        <p><strong>12th:</strong><span id="minimalist-12"></span></p>
+        <p><strong>Institution:</strong> <span id="minimalist-12institution"></span></p>
+        <p><strong>Year:</strong> <span id="minimalist-12yr"></span></p>
+      </div>
+      <div id="sub-div">
+        <p><strong>Bachelor:</strong> <span id="minimalist-bachelor"></span></p>
+        <p><strong>Institution:</strong> <span id="minimalist-bInst"></span></p>
+        <p><strong>Year:</strong> <span id="minimalist-bYear"></span></p>
+      </div>
+      <div id="sub-div">
+        <p><strong>Master:</strong> <span id="minimalist-master"></span></p>
+        <p><strong>Institution:</strong> <span id="minimalist-masterInst"></span></p>
+        <p><strong>Year:</strong> <span id="minimalist-masterYear"></span></p>
+      </div>
+      <div id="sub-div">
+        <h3>Other</h3>
+        <p id="minimalist-other"></p>
+      </div>
+    </div>
+
+
+
+    <div id="work">
+      <h3>Work Experience</h3>
+      <div id="work2">
+        <p><strong>Job Title:</strong><span id="minimalist-jt1"></span></p>
+        <p><strong>Employer:</strong><span id="minimalist-employer1"></span></p>
+        <p><strong>Year:</strong><span id="minimalist-year1"></span></p>
+      </div>
+
+      <div id="work2">
+        <p><strong>Job Title:</strong><span id="minimalist-jt2"></span></p>
+        <p><strong>Employer:</strong><span id="minimalist-employer2"></span></p>
+        <p><strong>Year:</strong><span id="minimalist-year2"></span></p>
+      </div>
+
+      <div id="work2">
+      <p><strong>Others:</strong><span id="minimalist-work-other"></span></p>
+      </div>
+      </div>
+
+    <div class="skills1">
+      <h3>skills</h3>
+      <div class="box">
+        <h3 id="minimalist-skills1"></h3>
+      </div>
+      <div class="box">
+        <h3 id="minimalist-skills2"></h3>
+      </div>
+      <div class="box">
+        <h3 id="minimalist-skills3"></h3>
+      </div>
+    </div>
+
+    <div class="hobbies">
+      <h3>language</h3>
+      <ul>
+        <li id="minimalist-lang1"></li>
+        <li id="minimalist-lang2"></li>
+        <li id="minimalist-lang3"></li>
+      </ul>
+    </div>
+
+    <div class="hobbies">
+      <h3>Hobbies</h3>
+      <ul>
+        <li id="minimalist-hobbies1"></li>
+        <li id="minimalist-hobbies2"></li>
+        <li id="minimalist-hobbies3"></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- second resume ------------------------------------------------------------->
+  <div id="two-column">
+    <div id="two-column">
+      <div id="two-column-heading2" class="left">
+        <div class="image">
+          <img id="two-column-img"alt="User's Picture"></img>
+          <i class="ri-phone-fill" id="two-column-phone"></i>
+          <i class="ri-mail-line" id="two-column-email"></i>
+          <i class="ri-map-pin-line" id="two-column-address"></i>
+        </div>
+        <div class="summary">
+          <h3>profile</h3>
+          <p id="two-column-profile"></p>
+        </div>
+
+        <div class="language">
+          <h3>language</h3>
+           <ul>
+            <li id="two-column-lang1"></li>
+            <li id="two-column-lang2"></li>
+            <li id="two-column-lang3"></li>
+          </ul>
+        </div>
+
+        <div class="language">
+          <h3>HOBBIES</h3>
+          <ul>
+            <li id="two-column-hobbies1"></li>
+            <li id="two-column-hobbies2"></li>
+            <li id="two-column-hobbies3"></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="right">
+        <div class="name">
+          <h3 id="two-column-name"></h3>
+        </div>
+        
+        
+        <div class="Experience">
+          <h3>Experience</h3>
+          <div class="exp-1">
+            <h6>Job Title:</h6><p id="two-column-jt1"style="font-size: 18px;"></p>
+            <h6>Employer:</h6><p id="two-column-employer1" style="font-size: 18px;"></p>
+            <h6>Year:</h6><p id="two-column-year1"style="font-size: 18px;"></p>
+            </div>
+          <div class="exp-1">
+            <h6>Job Title:</h6><p id="two-column-jt2" style="font-size: 18px;" ></p>
+            <h6>Employer:</h6><p id="two-column-employer2"style="font-size: 18px;"></p>
+            <h6>Year:</h6><p id="two-column-year2"style="font-size: 18px;"></p>
+            </div>
+          <div class="exp-1">
+            <h6>Other</h6> <p id="two-column-work-other"style="font-size: 18px;"></p>
+         
+          </div>
+        </div>
+       
+       
+       
+       
+        <div class="education">
+          <h3>Education</h3>
+          <div class="sub-div1">
+            <p><strong>12th:</strong><span  id="two-column-12"></span></p>
+            <p><strong>Institution:</strong> <span  id="two-column-12institution"></span></p>
+            <p><strong>Year:</strong> <span  id="two-column-12yr"></span></p>
+            <p><strong>Bechlor:</strong> <span  id="two-column-bachelor"></span></p>
+            <p><strong>Institution:</strong> <span  id="two-column-bInst"></span></p>
+            <p><strong>Year:</strong><span  id="two-column-bYear"></span> </p>
+            <p><strong>Master:</strong> <span  id="two-column-master"></span></p>
+            <p><strong>Institution:</strong> <span  id="two-column-masterInst"></span></p>
+            <p><strong>Year:</strong><span  id="two-column-masterYear"> </span></p>
+          </div>
+          <div id="sub-div1">
+          <p><strong>Other:</strong><span  id="two-column-other"> </span></p>
+            <!-- <p id="two-column-other"></p> -->
+          </div>
+        </div>
+        <div class="skills">
+          <h3>Skills</h3>
+          <div class="box">
+            <h3 id="two-column-skills1"></h3>
+          </div>
+          <div class="box">
+            <h3 id="two-column-skills2"></h3>
+          </div>
+          <div class="box">
+            <h3 id="two-column-skills3"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+ 
+
+</body>
+</html>
